@@ -18,9 +18,6 @@ API_KEY = os.environ.get("MOLTSETS_API_KEY")
 USER_AGENT = "scoutstream/1.0"  # required: requests without a User-Agent get 403
 
 
-SPEC_DOC = "MOLTSETS_SPEC.md"
-
-
 # Tools that draw on the fair-use *search* allowance; everything else used here draws on
 # the (larger) enrichment allowance.
 SEARCH_TOOLS = {

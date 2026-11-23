@@ -6,7 +6,6 @@ like your best accounts, enriches people you already know, and re-checks
 lead files bought from other providers. Every email comes with MoltSets' A–F send-safety grade.
 
 - Script: [moltsets_poc.py](moltsets_poc.py) (code in [moltsets/](moltsets/))
-- Why it's built this way (use cases, endpoint choices, lessons from testing, roadmap): [MOLTSETS_SPEC.md](MOLTSETS_SPEC.md)
 - Handling of untrusted data, keys and personal data: [SECURITY.md](SECURITY.md)
 
 ---
@@ -169,8 +168,7 @@ Continue anyway with 9 companies? [y/N]
 
 Ctrl+C behaves the same way: what's been found is saved.
 
-When the free search trial reaches 0, the script prints a reminder to upgrade and build the deferred use cases in
-[MOLTSETS_SPEC.md §6](MOLTSETS_SPEC.md#6-deferred-until-paid-plan).
+When the free search trial reaches 0, the script prints a reminder to upgrade to a paid plan.
 
 ### Output files and the cache
 
@@ -707,7 +705,7 @@ Suppress D. Send C and F at lower volume, separately from A/B. Emails are re-val
 | `MOLTSETS_API_KEY is not set` | Add it to `.env` in the folder you run from |
 | `unauthorized` / 401 | Key wrong or revoked — create a new one at app.moltsets.com |
 | 403 `forbidden` | Missing User-Agent — the script always sends one; only seen if calling the API by hand |
-| `fair_use_limit_exceeded` with no wait time | Free search trial used up — upgrade (see [MOLTSETS_SPEC.md §6](MOLTSETS_SPEC.md#6-deferred-until-paid-plan)) |
+| `fair_use_limit_exceeded` with no wait time | Free search trial used up — upgrade to a paid plan |
 | `fair_use_*` with a wait time | 5-hour window used up — the script waits if it's under 2 minutes, otherwise saves and stops; re-run after the reset time shown by `account` |
 | `prospect` finds 0 people | The console says whether the company is in MoltSets. If it isn't, check the website's domain or use another provider. If it is, try `--seniority all`, broader `--departments`, `--founders 2`, or drop `--location`. Zero-result searches are free |
 | Rows flagged `low` match confidence | MoltSets attached an unrelated profile to the domain — check the LinkedIn profile before using it |

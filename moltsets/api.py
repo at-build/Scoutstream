@@ -16,7 +16,6 @@ from moltsets.config import (
     MAX_WAIT_SECONDS,
     SEARCH_TOOLS,
     SEARCH_WINDOW,
-    SPEC_DOC,
     UNCACHED_TOOLS,
     USER_AGENT,
 )
@@ -322,6 +321,6 @@ def check_budget(search_needed=0, tokens_needed=0, phones_wanted=0, search_requi
 def remind_if_search_exhausted():
     if STATE["trial_plan"] and STATE["search_remaining"] == 0:
         print(
-            "\n>> Reminder: your MoltSets free search trial (100 results) is used up. Upgrade to the $27 or $97 plan, "
-            f"then build the deferred use cases in {SPEC_DOC} ('Deferred until paid plan')."
+            "\n>> Reminder: your MoltSets free search trial (100 results) is used up. Upgrade to the $27 or $97 plan "
+            "to keep searching."
         )
