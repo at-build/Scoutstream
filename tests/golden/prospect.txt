@@ -1,0 +1,47 @@
+
+Checking targets.csv ...
+   Title keywords: ['Procurement', 'Purchasing', 'Purchase', 'Sourcing', 'Buyer', 'Supply Chain', 'Logistics']
+   Seniority: ['Director', 'Head', 'VP', 'Partner', 'Owner', 'C Suite']  (then people with no seniority on record fill any free slots)
+   Founders: up to 3 per company (separate search)
+Checking your MoltSets account (free) ...
+   Plan: starter  Tokens: unlimited  Search results left: 500 (this 5-hour window)  Max per search call: 25
+
+!! Pre-run check found 2 issue(s):
+   - line 4 (Acme Again): same website as line 2 (Acme Robotics) — skipped.
+   - line 5 (Gamma): website 'not a site' isn't a valid domain — company will be skipped.
+
+##### [1/2] Acme Robotics (acme.example) #####
+   5 people returned (total matching: role 2, founder 3)
+   Duplicate profile for Asha Rao merged.
+  1. Asha Rao — Head of Procurement (Head), Bengaluru India
+     asha@acme.example  [A: send]  https://www.linkedin.com/in/example_asha_rao
+  2. Ravi Kumar — Sourcing Coordinator (C Suite), Pune India
+     ravi@acme.example  [B: probably send]  https://www.linkedin.com/in/example_ravi_kumar
+  3. Meera Iyer — Co-Founder & CEO (Founder),  United States  [low match confidence]
+     meera@gmail.example  [A: send]  https://www.linkedin.com/in/example_meera_iyer
+     Notes: based in United States; company HQ is India
+  4. Acme Robotics Turkey — Founder (level unknown),  Turkey  [low match confidence]
+     (no email found)  https://www.linkedin.com/in/example_acme_tr
+     Notes: listed employer is acme-tr.example
+
+##### [2/2] Example Beta (examplebeta.example) #####
+   0 people returned (total matching: role 0, founder 0)
+   No matches: Example Beta is in MoltSets (11-20 employees, United States) but nobody matches these roles — try --departments all, --seniority all, or --founders.
+
+=== Summary ===
+  Acme Robotics: 4 contacts found, 3 with email, 2 flagged
+  Example Beta: no contacts: Example Beta is in MoltSets (11-20 employees, United States) but nobody matches these roles — try --departments all, --seniority all, or --founders
+  Total: 4 leads, 3 with email (grades A: 2, B: 1)
+  Search results left: 500 (this 5-hour window)
+
+Saved targets_with_contacts.csv: your 4 rows with contact columns added (7 rows — one per contact, one per company with none)
+
+===== targets_with_contacts.csv =====
+company,website,location,contact_search_status,contact_search_company,contact_search_domain,contact_rank,contact_type,contact_role_fit,contact_match_confidence,contact_full_name,contact_job_title,contact_seniority,contact_department,contact_company,contact_city,contact_state,contact_country,contact_linkedin_url,contact_email,contact_email_type,contact_email_risk_score,contact_email_action,contact_email_validated_at,contact_email_source,contact_mobile_phone,contact_mobile_phone_validated_at,contact_role_start_date,contact_moltsets_score,contact_notes
+Acme Robotics,acme.example,India,"4 contacts found, 3 with email, 2 flagged",Acme Robotics,acme.example,1,role,strong,high,Asha Rao,Head of Procurement,Head,,Acme Robotics,Bengaluru,,India,https://www.linkedin.com/in/example_asha_rao,asha@acme.example,business,A,send,2026-10-01,people search,,,,5.0,
+Acme Robotics,acme.example,India,"4 contacts found, 3 with email, 2 flagged",Acme Robotics,acme.example,2,role,strong,high,Ravi Kumar,Sourcing Coordinator,C Suite,,Acme Robotics,Pune,,India,https://www.linkedin.com/in/example_ravi_kumar,ravi@acme.example,business,B,probably send,2026-09-01,best-email lookup,,,,4.0,
+Acme Robotics,acme.example,India,"4 contacts found, 3 with email, 2 flagged",Acme Robotics,acme.example,3,founder,strong,low,Meera Iyer,Co-Founder & CEO,Founder,,Acme Robotics,,,United States,https://www.linkedin.com/in/example_meera_iyer,meera@gmail.example,personal,A,send,,people search,,,,3.0,based in United States; company HQ is India
+Acme Robotics,acme.example,India,"4 contacts found, 3 with email, 2 flagged",Acme Robotics,acme.example,4,founder,strong,low,Acme Robotics Turkey,Founder,,,Acme TR,,,Turkey,https://www.linkedin.com/in/example_acme_tr,,,,,,,,,,1.0,listed employer is acme-tr.example
+Example Beta,https://www.examplebeta.example,,"no contacts: Example Beta is in MoltSets (11-20 employees, United States) but nobody matches these roles — try --departments all, --seniority all, or --founders",Example Beta,examplebeta.example,,,,,,,,,,,,,,,,,,,,,,,,
+Acme Again,acme.example,,"skipped: same website as line 2 (Acme Robotics), whose rows list the contacts",,,,,,,,,,,,,,,,,,,,,,,,,,
+Gamma,not a site,,skipped: website 'not a site' isn't a valid domain,,,,,,,,,,,,,,,,,,,,,,,,,,

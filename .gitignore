@@ -1,0 +1,33 @@
+# Secrets: API keys
+.env
+.env.*
+!.env.example
+
+# Local data: contact details and the paid-lookup cache (personal data, never committed)
+.moltsets_cache.json
+.moltsets_visitors.json
+*.csv
+leads/
+exports/
+# Cron / console logs (they list contacts' names and emails) and half-written cache / record files
+*.log
+*.tmp
+
+# Replay baselines
+.replay/
+
+# Python / tooling
+__pycache__/
+*.pyc
+.ruff_cache/
+.pytest_cache/
+.venv/
+
+# AI assistant settings local to one machine (permission rules, paths)
+.claude/settings.local.json
+
+# macOS
+.DS_Store
+
+# Internal spec, kept local only (not published)
+MOLTSETS_SPEC.md

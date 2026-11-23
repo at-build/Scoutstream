@@ -1,0 +1,44 @@
+   lusha_examplemotors_test_leads.csv: 4 rows (lusha)
+   crustdata_exampleelectric_test.csv: 1 row (crustdata)
+   4 unique lookups (each email / LinkedIn URL is looked up once, across files)
+Checking your MoltSets account (free) ...
+   Plan: starter  Tokens: unlimited  Search results left: 500 (this 5-hour window)  Max per search call: 25
+
+!! Pre-run check found 2 issue(s):
+   - lusha_examplemotors_test_leads.csv: 1 of 4 rows have no email or LinkedIn URL — they're kept in the output but not checked.
+   - crustdata_exampleelectric_test.csv: no company column, so for 1 row(s) without a work email the job-change check can't tell which employer to expect. Pass --expected-company (e.g. exampleelectric.example) to enable it.
+
+##### lusha_examplemotors_test_leads.csv (lusha) #####
+  1. Asha Rao: ok (email A)
+  2. Vikram Shah: moved company -> now Category Manager at Example Foods
+  3. Neha Iyer: new email found (MoltSets email: neha@examplemotors.example [A])
+  4. Old Row: not checked
+   Saved ./lusha_examplemotors_test_leads_moltsets_verified.csv
+
+##### crustdata_exampleelectric_test.csv (crustdata) #####
+  1. Ravi K: new email found (MoltSets email: ravi.k@exampleelectric.example [B])
+   Saved ./crustdata_exampleelectric_test_moltsets_verified.csv
+
+=== Provider comparison ===
+  provider   leads  leads_with_email  emails_graded  grade_A  grade_B  grade_C  grade_D  grade_F  pct_sendable_A_B  new_emails_from_moltsets  moved_company  title_changed  not_in_moltsets
+  lusha      4      2                 1              1        0        0        0        0        50%               2                         1              1              0              
+  crustdata  1      0                 0              0        0        0        0        0                          1                         0              0              0              
+  (pct_sendable_A_B = provider emails graded A or B, out of leads that had an email)
+
+Saved comparison to ./moltsets_provider_comparison.csv
+
+===== lusha_examplemotors_test_leads_moltsets_verified.csv =====
+name,company,job_title,email,linkedin_url,ms_status,ms_still_at_company,ms_current_company,ms_current_domain,ms_current_title,ms_title_changed,ms_role_start_date,ms_input_email_grade,ms_input_email_action,ms_input_email_validated_at,ms_work_email,ms_work_email_grade,ms_personal_email,ms_linkedin_url,ms_notes
+Asha Rao,Example Motors,Head of Procurement,asha@examplemotors.example,,ok,yes,Example Motors,examplemotors.example,Head of Procurement,no,,A,send,2026-09-20,,,,https://www.linkedin.com/in/example_asha_rao,
+Vikram Shah,Example Motors,Purchase Manager,vikram@examplemotors.example,,moved company,no,Example Foods,examplefoods.example,Category Manager,yes,,,,,vikram@examplefoods.example,A,,,MoltSets doesn't have the input email on file for this person
+Neha Iyer,Example Motors,Supply Chain Lead,,https://www.linkedin.com/in/example_neha_iyer,new email found,yes,Example Motors,examplemotors.example,Head of Supply Chain,no,2025-04-01,,,,neha@examplemotors.example,A,,https://www.linkedin.com/in/example_neha_iyer,
+Old Row,Example Motors,Buyer,,,not checked,,,,,,,,,,,,,,no email or LinkedIn URL
+
+===== crustdata_exampleelectric_test_moltsets_verified.csv =====
+name,linkedin_url,title,ms_status,ms_still_at_company,ms_current_company,ms_current_domain,ms_current_title,ms_title_changed,ms_role_start_date,ms_input_email_grade,ms_input_email_action,ms_input_email_validated_at,ms_work_email,ms_work_email_grade,ms_personal_email,ms_linkedin_url,ms_notes
+Ravi K,https://linkedin.com/in/example_ravi_k,Purchase Head,new email found,unknown,Example Electric India Ltd,exampleelectric.example,Head of Purchase,no,,,,,ravi.k@exampleelectric.example,B,,https://www.linkedin.com/in/example_ravi_k,
+
+===== moltsets_provider_comparison.csv =====
+provider,file,leads,leads_with_email,emails_graded,grade_A,grade_B,grade_C,grade_D,grade_F,pct_sendable_A_B,new_emails_from_moltsets,moved_company,title_changed,not_in_moltsets
+lusha,lusha_examplemotors_test_leads.csv,4,2,1,1,0,0,0,0,50%,2,1,1,0
+crustdata,crustdata_exampleelectric_test.csv,1,0,0,0,0,0,0,0,,1,0,0,0

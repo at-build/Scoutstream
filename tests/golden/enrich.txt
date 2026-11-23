@@ -1,0 +1,45 @@
+
+Checking prospects.csv ...
+Checking your MoltSets account (free) ...
+   Plan: starter  Tokens: unlimited  Search results left: 500 (this 5-hour window)  Max per search call: 25
+   Pre-run check passed: 4 prospects ready.
+
+Looking up 4 prospects ...
+
+[1/4] Jane Doe @ acme.example
+   Name:     Jane Doe — VP Supply Chain, Acme
+   Email:    jane@acme.example  [A: send; business, validated 2026-10-01]
+   Personal: jane.doe@gmail.example  [B]
+   LinkedIn: https://www.linkedin.com/in/example_jane_doe
+   Notes:    2 LinkedIn profiles match this name at acme.example — check it's the right person
+
+[2/4] https://www.linkedin.com/in/example_john_roe
+   Name:     John Roe — Procurement Manager, NewCo
+   Email:    john@oldco.example  [A: verify first (not a newco.example address); business, validated 2026-08-01]
+   LinkedIn: https://www.linkedin.com/in/example_john_roe
+   Notes:    john@oldco.example isn't a newco.example address — likely an old employer's
+
+[3/4] inbound@examplebeta.example @ examplebeta.example
+   Name:      — (title unknown)
+   Email:    (none found)
+   LinkedIn: (not found)
+   Notes:    input email not found in MoltSets
+
+[4/4] Nobody Here @ zzz.example
+   Name:     Nobody Here — (title unknown)
+   Email:    (none found)
+   LinkedIn: (not found)
+
+=== Summary ===
+  Looked up: 4/4
+  Emails found: 2 (grades A: 2)
+  Search results left: 500 (this 5-hour window)
+
+Saved 4 rows to prospects_moltsets_contacts.csv
+
+===== prospects_moltsets_contacts.csv =====
+input_name,input_company,input_linkedin,input_email,full_name,job_title,seniority,department,company,company_domain,company_industry,company_size,city,state,country,linkedin_url,email,email_type,email_risk_score,email_action,email_validated_at,email_source,personal_email,personal_email_risk_score,mobile_phone,mobile_phone_validated_at,lookup_status,notes
+Jane Doe,acme.example,,,Jane Doe,VP Supply Chain,VP,,Acme,acme.example,Manufacturing,51-200,Pune,,India,https://www.linkedin.com/in/example_jane_doe,jane@acme.example,business,A,send,2026-10-01,name + company,jane.doe@gmail.example,B,,,email found,2 LinkedIn profiles match this name at acme.example — check it's the right person
+,,https://www.linkedin.com/in/example_john_roe,,John Roe,Procurement Manager,,,NewCo,newco.example,,,,,India,https://www.linkedin.com/in/example_john_roe,john@oldco.example,business,A,verify first (not a newco.example address),2026-08-01,best-email lookup,,,,,email found,john@oldco.example isn't a newco.example address — likely an old employer's
+,examplebeta.example,,inbound@examplebeta.example,,,,,,examplebeta.example,,,,,,,,,,,,,,,,,not found,input email not found in MoltSets
+Nobody Here,zzz.example,,,Nobody Here,,,,,zzz.example,,,,,,,,,,,,,,,,,not found,

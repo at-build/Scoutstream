@@ -1,0 +1,18 @@
+   Filters: {'industry': ['Manufacturing'], 'employee_range': ['51-200', '201-500'], 'country': ['India']}
+   Excluding 1 company you already have
+Checking your MoltSets account (free) ...
+   Plan: starter  Tokens: unlimited  Search results left: 500 (this 5-hour window)  Max per search call: 25
+   Pre-run check passed: 1 search ready.
+
+Searching companies (up to 2) ...
+   2 companies returned (total matching: 2).
+  - Example Space (examplespace.example) — Government and Public Administration, 201-500 employees, $5M - $10M, Bengaluru India
+  - Example Machines (examplemachines.example) — Manufacturing, 51-200 employees, ?, Bengaluru India
+
+Saved 2 companies to moltsets_accounts.csv
+Next: python3 moltsets_poc.py prospect --companies-file moltsets_accounts.csv
+
+===== moltsets_accounts.csv =====
+company,website,location,domain,industry,linkedin_industry,naics,employee_range,employee_count,revenue_range,city,state,country,linkedin_url,moltsets_score
+Example Space,https://examplespace.example,India,examplespace.example,Government and Public Administration,Space Research and Technology,Satellite Telecommunications,201-500,320,$5M - $10M,Bengaluru,Karnataka,India,https://www.linkedin.com/company/example_space,7.5
+Example Machines,https://examplemachines.example,India,examplemachines.example,Manufacturing,,,51-200,,,Bengaluru,,India,,6.0
